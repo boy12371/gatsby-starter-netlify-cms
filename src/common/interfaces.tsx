@@ -173,3 +173,13 @@ export interface TagRouteProps<F extends Frontmatter = Frontmatter> {
         tag: string;
     };
 }
+
+export interface HomePageTemplateProps {
+    title?: React.ReactText;
+    content: string;
+    contentComponent?: React.ComponentType<BaseContentProps<any>>;
+}
+
+export interface HomePageProps {
+    data: any;
+}
