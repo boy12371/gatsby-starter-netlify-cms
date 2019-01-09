@@ -5,7 +5,7 @@
     "author": "Richard Kuang",
     "repository": {
         "type": "git",
-        "url": "http://cms.kuangjia.org"
+        "url": "https://github.com/boy12371/gatsby-starter-netlify-cms.git"
     },
     "dependencies": {
         "@types/lodash": "^4.14.119",
@@ -45,9 +45,7 @@
         "react-helmet": "^5.2.0",
         "uuid": "^3.3.2"
     },
-    "keywords": [
-        "gatsby"
-    ],
+    "keywords": ["gatsby"],
     "license": "MIT",
     "main": "n/a",
     "scripts": {

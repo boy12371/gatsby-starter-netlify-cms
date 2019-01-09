@@ -15,16 +15,16 @@ const Navbar: React.SFC = () => (
             </div>
             <div className="navbar-start">
                 <Link className="navbar-item" to="/about">
-                    About
+                    关于我们
                 </Link>
                 <Link className="navbar-item" to="/products">
-                    Products
+                    产品展示
                 </Link>
                 <Link className="navbar-item" to="/contact">
-                    Contact
+                    联系我们
                 </Link>
                 <Link className="navbar-item" to="/contact/examples">
-                    Form Examples
+                    案例展示
                 </Link>
             </div>
         </div>

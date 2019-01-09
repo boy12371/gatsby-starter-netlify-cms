@@ -2,7 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import { Frontmatter } from "../templates/blog-post";
+import { Frontmatter } from "../common/interfaces";
 
 export interface Edge<F extends Frontmatter = Frontmatter> {
     node: {

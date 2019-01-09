@@ -1,4 +1,5 @@
 import React from "react";
+
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import { FeatureGridProps } from "../common/interfaces";
 
