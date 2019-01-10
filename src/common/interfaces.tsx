@@ -183,3 +183,20 @@ export interface HomePageTemplateProps {
 export interface HomePageProps {
     data: any;
 }
+
+export interface ProductPostTemplateProps {
+    content: React.ReactNode;
+    contentComponent?: React.ComponentType<BaseContentProps<any>>;
+    description: React.ReactText;
+    tags?: string[];
+    title: string;
+    helmet?: React.ReactNode;
+}
+
+export interface ProductPostData<F extends object = Frontmatter> {
+    markdownRemark: MarkdownRemark<F>;
+}
+
+export interface ProductPostProps {
+    data: ProductPostData;
+}
