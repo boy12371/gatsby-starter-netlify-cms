@@ -8,12 +8,9 @@ import PreviewCompatibleImage, {
 import Feature from "../components/Features";
 import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
-import {
-    ProductPageTemplateProps,
-    ProductPageProps
-} from "../common/interfaces";
+import { SearchPageTemplateProps, SearchPageProps } from "../common/interfaces";
 
-export const ProductPageTemplate: React.SFC<ProductPageTemplateProps> = ({
+export const SearchPageTemplate: React.SFC<SearchPageTemplateProps> = ({
     image,
     title,
     heading,
@@ -122,12 +119,12 @@ export const ProductPageTemplate: React.SFC<ProductPageTemplateProps> = ({
     </section>
 );
 
-const ProductPage: React.SFC<ProductPageProps> = ({ data }) => {
+const SearchPage: React.SFC<SearchPageProps> = ({ data }) => {
     const { frontmatter } = data.markdownRemark;
 
     return (
         <Layout>
-            <ProductPageTemplate
+            <SearchPageTemplate
                 image={frontmatter.image}
                 title={frontmatter.title}
                 heading={frontmatter.heading}
@@ -142,10 +139,10 @@ const ProductPage: React.SFC<ProductPageProps> = ({ data }) => {
     );
 };
 
-export default ProductPage;
+export default SearchPage;
 
 export const productPageQuery = graphql`
-    query ProductPage($id: String!) {
+    query SearchPage($id: String!) {
         markdownRemark(id: { eq: $id }) {
             frontmatter {
                 title

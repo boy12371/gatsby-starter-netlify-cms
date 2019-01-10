@@ -9,7 +9,11 @@ const Navbar: React.SFC = () => (
             <div className="navbar-brand">
                 <Link to="/" className="navbar-item">
                     <figure className="image">
-                        <img src={logo} alt="Kaldi" style={{ width: "88px" }} />
+                        <img
+                            src={logo}
+                            alt="KuangJia"
+                            style={{ width: "88px" }}
+                        />
                     </figure>
                 </Link>
             </div>
@@ -22,6 +26,9 @@ const Navbar: React.SFC = () => (
                 </Link>
                 <Link className="navbar-item" to="/contact">
                     联系我们
+                </Link>
+                <Link className="navbar-item" to="/search">
+                    搜索列表
                 </Link>
                 <Link className="navbar-item" to="/contact/examples">
                     案例展示

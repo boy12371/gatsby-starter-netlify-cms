@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 
-import Layout from "../../components/Layout";
-import { Frontmatter } from "../../common/interfaces";
+import Layout from "../components/Layout";
+import { Frontmatter } from "../common/interfaces";
 
 export interface Edge<F extends Frontmatter = Frontmatter> {
     node: {
@@ -43,7 +43,7 @@ export default class IndexPage extends React.Component<PageRouteProps> {
                     <div className="container">
                         <div className="content">
                             <h1 className="has-text-weight-bold is-size-2">
-                                最近的发表
+                                Latest Stories
                             </h1>
                         </div>
                         {posts.map(({ node: post }) => (
@@ -73,7 +73,7 @@ export default class IndexPage extends React.Component<PageRouteProps> {
                                         className="button is-small"
                                         to={post.fields.slug}
                                     >
-                                        展开详情 →
+                                        Keep Reading →
                                     </Link>
                                 </p>
                             </div>

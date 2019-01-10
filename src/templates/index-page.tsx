@@ -8,21 +8,14 @@ import PreviewCompatibleImage, {
 import Feature from "../components/Features";
 import Testimonials from "../components/Testimonials";
 import Pricing from "../components/Pricing";
-import {
-    ProductPageTemplateProps,
-    ProductPageProps
-} from "../common/interfaces";
+import { IndexPageTemplateProps, IndexPageProps } from "../common/interfaces";
 
-export const ProductPageTemplate: React.SFC<ProductPageTemplateProps> = ({
+export const IndexPageTemplate: React.SFC<IndexPageTemplateProps> = ({
     image,
     title,
     heading,
     description,
-    intro,
-    main,
-    testimonials,
-    fullImage,
-    pricing
+    fullImage
 }) => (
     <section className="section section--gradient">
         <div className="container">
@@ -61,43 +54,26 @@ export const ProductPageTemplate: React.SFC<ProductPageTemplateProps> = ({
                                     <p>{description}</p>
                                 </div>
                             </div>
-                            <Feature gridItems={intro.blurbs} />
                             <div className="columns">
                                 <div className="column is-7">
-                                    <h3 className="has-text-weight-semibold is-size-3">
-                                        {main.heading}
-                                    </h3>
-                                    <p>{main.description}</p>
+                                    <h3 className="has-text-weight-semibold is-size-3" />
                                 </div>
                             </div>
                             <div className="tile is-ancestor">
                                 <div className="tile is-vertical">
                                     <div className="tile">
                                         <div className="tile is-parent is-vertical">
-                                            <article className="tile is-child">
-                                                <PreviewCompatibleImage
-                                                    imageInfo={main.image1}
-                                                />
-                                            </article>
+                                            <article className="tile is-child" />
                                         </div>
                                         <div className="tile is-parent">
-                                            <article className="tile is-child">
-                                                <PreviewCompatibleImage
-                                                    imageInfo={main.image2}
-                                                />
-                                            </article>
+                                            <article className="tile is-child" />
                                         </div>
                                     </div>
                                     <div className="tile is-parent">
-                                        <article className="tile is-child">
-                                            <PreviewCompatibleImage
-                                                imageInfo={main.image3}
-                                            />
-                                        </article>
+                                        <article className="tile is-child" />
                                     </div>
                                 </div>
                             </div>
-                            <Testimonials testimonials={testimonials} />
                             <div
                                 className="full-width-image-container"
                                 style={{
@@ -109,11 +85,7 @@ export const ProductPageTemplate: React.SFC<ProductPageTemplateProps> = ({
                                     })`
                                 }}
                             />
-                            <h2 className="has-text-weight-semibold is-size-2">
-                                {pricing.heading}
-                            </h2>
-                            <p className="is-size-5">{pricing.description}</p>
-                            <Pricing data={pricing.plans} />
+                            <h2 className="has-text-weight-semibold is-size-2" />
                         </div>
                     </div>
                 </div>
@@ -122,33 +94,28 @@ export const ProductPageTemplate: React.SFC<ProductPageTemplateProps> = ({
     </section>
 );
 
-const ProductPage: React.SFC<ProductPageProps> = ({ data }) => {
+const IndexPage: React.SFC<IndexPageProps> = ({ data }) => {
     const { frontmatter } = data.markdownRemark;
 
     return (
         <Layout>
-            <ProductPageTemplate
+            <IndexPageTemplate
                 image={frontmatter.image}
                 title={frontmatter.title}
                 heading={frontmatter.heading}
                 description={frontmatter.description}
-                intro={frontmatter.intro}
-                main={frontmatter.main}
-                testimonials={frontmatter.testimonials}
                 fullImage={frontmatter.full_image}
-                pricing={frontmatter.pricing}
             />
         </Layout>
     );
 };
 
-export default ProductPage;
+export default IndexPage;
 
-export const productPageQuery = graphql`
-    query ProductPage($id: String!) {
+export const indexPageQuery = graphql`
+    query IndexPage($id: String!) {
         markdownRemark(id: { eq: $id }) {
             frontmatter {
-                title
                 image {
                     childImageSharp {
                         fluid(maxWidth: 2048, quality: 100) {
@@ -156,75 +123,14 @@ export const productPageQuery = graphql`
                         }
                     }
                 }
+                title
                 heading
                 description
-                intro {
-                    blurbs {
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 240, quality: 64) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                        text
-                    }
-                    heading
-                    description
-                }
-                main {
-                    heading
-                    description
-                    image1 {
-                        alt
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 526, quality: 92) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    image2 {
-                        alt
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 526, quality: 92) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                    image3 {
-                        alt
-                        image {
-                            childImageSharp {
-                                fluid(maxWidth: 1075, quality: 72) {
-                                    ...GatsbyImageSharpFluid
-                                }
-                            }
-                        }
-                    }
-                }
-                testimonials {
-                    author
-                    quote
-                }
                 full_image {
                     childImageSharp {
                         fluid(maxWidth: 2048, quality: 100) {
                             ...GatsbyImageSharpFluid
                         }
-                    }
-                }
-                pricing {
-                    heading
-                    description
-                    plans {
-                        description
-                        items
-                        plan
-                        price
                     }
                 }
             }

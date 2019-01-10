@@ -1,5 +1,5 @@
 ---
-templateKey: home-page
+templateKey: index-page
 title: 首页
 ---
 

@@ -104,6 +104,51 @@ export interface BlogPostProps {
     data: BlogPostData;
 }
 
+export interface Edge<F extends Frontmatter = Frontmatter> {
+    node: {
+        fields: {
+            slug: string;
+        };
+        frontmatter: F;
+    };
+}
+
+export interface TagRouteProps<F extends Frontmatter = Frontmatter> {
+    data: {
+        allMarkdownRemark: {
+            edges: Edge<F>[];
+            totalCount: number;
+        };
+        site: {
+            siteMetadata: {
+                title: string;
+            };
+        };
+    };
+    pageContext: {
+        tag: string;
+    };
+}
+
+// ====================== ProductPage ======================
+
+export interface ProductPostTemplateProps {
+    content: React.ReactNode;
+    contentComponent?: React.ComponentType<BaseContentProps<any>>;
+    description: React.ReactText;
+    tags?: string[];
+    title: string;
+    helmet?: React.ReactNode;
+}
+
+export interface ProductPostData<F extends object = Frontmatter> {
+    markdownRemark: MarkdownRemark<F>;
+}
+
+export interface ProductPostProps {
+    data: ProductPostData;
+}
+
 export interface ProductPageIntro {
     blurbs: ImageInfoWithText[];
 }
@@ -145,46 +190,12 @@ export interface ProductPageFrontmatter extends Frontmatter {
 }
 
 export interface ProductPageProps {
-    data: BlogPostData<ProductPageFrontmatter>;
+    data: ProductPostData<ProductPageFrontmatter>;
 }
 
-export interface Edge<F extends Frontmatter = Frontmatter> {
-    node: {
-        fields: {
-            slug: string;
-        };
-        frontmatter: F;
-    };
-}
+// ====================== SearchPage ======================
 
-export interface TagRouteProps<F extends Frontmatter = Frontmatter> {
-    data: {
-        allMarkdownRemark: {
-            edges: Edge<F>[];
-            totalCount: number;
-        };
-        site: {
-            siteMetadata: {
-                title: string;
-            };
-        };
-    };
-    pageContext: {
-        tag: string;
-    };
-}
-
-export interface HomePageTemplateProps {
-    title?: React.ReactText;
-    content: string;
-    contentComponent?: React.ComponentType<BaseContentProps<any>>;
-}
-
-export interface HomePageProps {
-    data: any;
-}
-
-export interface ProductPostTemplateProps {
+export interface SearchPostTemplateProps {
     content: React.ReactNode;
     contentComponent?: React.ComponentType<BaseContentProps<any>>;
     description: React.ReactText;
@@ -193,10 +204,72 @@ export interface ProductPostTemplateProps {
     helmet?: React.ReactNode;
 }
 
-export interface ProductPostData<F extends object = Frontmatter> {
+export interface SearchPostData<F extends object = Frontmatter> {
     markdownRemark: MarkdownRemark<F>;
 }
 
-export interface ProductPostProps {
-    data: ProductPostData;
+export interface SearchPostProps {
+    data: SearchPostData;
+}
+
+export interface SearchPageIntro {
+    blurbs: ImageInfoWithText[];
+}
+
+export interface SearchPageMain {
+    heading?: string;
+    description?: string;
+    image1: Image;
+    image2: Image;
+    image3: Image;
+}
+
+export interface SearchPagePricing {
+    heading?: string;
+    description?: string;
+    plans: Price[];
+}
+
+export interface SearchPageTemplateProps {
+    image: Image;
+    title?: string;
+    heading?: string;
+    description?: string;
+    intro: SearchPageIntro;
+    main: SearchPageMain;
+    testimonials: Testimonial[];
+    fullImage: Image;
+    pricing: SearchPagePricing;
+}
+
+export interface SearchPageFrontmatter extends Frontmatter {
+    image: Image;
+    heading: string;
+    intro: SearchPageIntro;
+    main: SearchPageMain;
+    testimonials: Testimonial[];
+    full_image: Image;
+    pricing: SearchPagePricing;
+}
+
+export interface SearchPageProps {
+    data: SearchPostData<SearchPageFrontmatter>;
+}
+
+// ====================== IndexPage ======================
+
+export interface IndexPageIntro {
+    blurbs: ImageInfoWithText[];
+}
+
+export interface IndexPageTemplateProps {
+    image: Image;
+    title?: string;
+    heading?: string;
+    description?: string;
+    fullImage: Image;
+}
+
+export interface IndexPageProps {
+    data: any;
 }
