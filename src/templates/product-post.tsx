@@ -5,9 +5,12 @@ import { graphql, Link } from "gatsby";
 
 import Layout from "../components/Layout";
 import { Content, HTMLContent } from "../components/Content";
-import { AppPostTemplateProps, AppPostProps } from "../common/interfaces";
+import {
+    ProductPostTemplateProps,
+    ProductPostProps
+} from "../common/interfaces";
 
-export const AppPostTemplate: React.SFC<AppPostTemplateProps> = ({
+export const ProductPostTemplate: React.SFC<ProductPostTemplateProps> = ({
     content,
     contentComponent,
     description,
@@ -51,17 +54,17 @@ export const AppPostTemplate: React.SFC<AppPostTemplateProps> = ({
     );
 };
 
-const AppPost: React.SFC<AppPostProps> = ({ data }) => {
+const ProductPost: React.SFC<ProductPostProps> = ({ data }) => {
     const { markdownRemark: post } = data;
 
     return (
         <Layout>
-            <AppPostTemplate
+            <ProductPostTemplate
                 content={post.html}
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description}
                 helmet={
-                    <Helmet titleTemplate="%s | App">
+                    <Helmet titleTemplate="%s | Product">
                         <title>{`${post.frontmatter.title}`}</title>
                         <meta
                             name="description"
@@ -76,10 +79,10 @@ const AppPost: React.SFC<AppPostProps> = ({ data }) => {
     );
 };
 
-export default AppPost;
+export default ProductPost;
 
 export const pageQuery = graphql`
-    query AppPostByID($id: String!) {
+    query ProductPostByID($id: String!) {
         markdownRemark(id: { eq: $id }) {
             id
             html

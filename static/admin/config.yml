@@ -6,26 +6,13 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "design"
-    label: "设计"
-    folder: "src/pages/design"
+  - name: "product"
+    label: "发布"
+    folder: "src/pages/product"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "design-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
-  - name: "app"
-    label: "应用"
-    folder: "src/pages/app"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "app-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}

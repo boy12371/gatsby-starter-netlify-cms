@@ -2,12 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 
 import Layout from "../components/Layout";
-import PreviewCompatibleImage, {
-    isImageInfo
-} from "../components/PreviewCompatibleImage";
-import Feature from "../components/Features";
-import Testimonials from "../components/Testimonials";
-import Pricing from "../components/Pricing";
+import { isImageInfo } from "../components/PreviewCompatibleImage";
 import { IndexPageTemplateProps, IndexPageProps } from "../common/interfaces";
 
 export const IndexPageTemplate: React.SFC<IndexPageTemplateProps> = ({

@@ -1,9 +1,7 @@
 import CMS from "netlify-cms";
 
 import AboutPagePreview from "./preview-templates/AboutPagePreview";
-import AppPostPreview from "./preview-templates/AppPostPreview";
-import DesignPostPreview from "./preview-templates/DesignPostPreview";
+import ProductPostPreview from "./preview-templates/ProductPostPreview";
 
 CMS.registerPreviewTemplate("about", AboutPagePreview);
-CMS.registerPreviewTemplate("app", AppPostPreview);
-CMS.registerPreviewTemplate("design", DesignPostPreview);
+CMS.registerPreviewTemplate("product", ProductPostPreview);

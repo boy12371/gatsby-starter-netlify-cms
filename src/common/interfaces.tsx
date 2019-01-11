@@ -194,9 +194,9 @@ export interface IndexPageProps {
     data: any;
 }
 
-// ====================== AppPost ======================
+// ====================== ProductPost ======================
 
-export interface AppPostTemplateProps {
+export interface ProductPostTemplateProps {
     content: React.ReactNode;
     contentComponent?: React.ComponentType<BaseContentProps<any>>;
     description: React.ReactText;
@@ -205,73 +205,10 @@ export interface AppPostTemplateProps {
     helmet?: React.ReactNode;
 }
 
-export interface AppPostData<F extends object = Frontmatter> {
+export interface ProductPostData<F extends object = Frontmatter> {
     markdownRemark: MarkdownRemark<F>;
 }
 
-export interface AppPostProps {
-    data: AppPostData;
-}
-
-// ====================== DesignPage ======================
-
-export interface DesignPostTemplateProps {
-    content: React.ReactNode;
-    contentComponent?: React.ComponentType<BaseContentProps<any>>;
-    description: React.ReactText;
-    tags?: string[];
-    title: string;
-    helmet?: React.ReactNode;
-}
-
-export interface DesignPostData<F extends object = Frontmatter> {
-    markdownRemark: MarkdownRemark<F>;
-}
-
-export interface DesignPostProps {
-    data: DesignPostData;
-}
-
-export interface DesignPageIntro {
-    blurbs: ImageInfoWithText[];
-}
-
-export interface DesignPageMain {
-    heading?: string;
-    description?: string;
-    image1: Image;
-    image2: Image;
-    image3: Image;
-}
-
-export interface DesignPagePricing {
-    heading?: string;
-    description?: string;
-    plans: Price[];
-}
-
-export interface DesignPageTemplateProps {
-    image: Image;
-    title?: string;
-    heading?: string;
-    description?: string;
-    intro: DesignPageIntro;
-    main: DesignPageMain;
-    testimonials: Testimonial[];
-    fullImage: Image;
-    pricing: DesignPagePricing;
-}
-
-export interface DesignPageFrontmatter extends Frontmatter {
-    image: Image;
-    heading: string;
-    intro: DesignPageIntro;
-    main: DesignPageMain;
-    testimonials: Testimonial[];
-    full_image: Image;
-    pricing: DesignPagePricing;
-}
-
-export interface DesignPageProps {
-    data: DesignPostData<DesignPageFrontmatter>;
+export interface ProductPostProps {
+    data: ProductPostData;
 }
