@@ -2,23 +2,14 @@
 templateKey: about-page
 title: 关于我们
 ---
+## _企业简介_
 
-### Shade-grown coffee
+* 上海匡架网络科技有限公司，成立于2015年，致力于IT服务产品化、软硬件解决方案以及应用的开发和测试以及平面、三维设计等发展方向，满足开发者应用分发、活跃用户、用户收益、企业品牌塑造等多样化服务需求。
 
-Coffee is a small tree or shrub that grows in the forest understory in its wild form, and traditionally was grown commercially under other trees that provided shade. The forest-like structure of shade coffee farms provides habitat for a great number of migratory and resident species.
+## _企业文化_
 
-### Single origin
+* “唯天下之至诚，能胜天下之至伪，唯天下之至拙，能胜天下之至巧”。“诚”是作有价值的企业可持续发展的宝贵资源和财富。匡架坚持以诚待人为公司的核心理念，以为客户创造卓越价值为本，不断激发每一个员工积极投入企业平台，发挥自主创业热情。
 
-Single-origin coffee is coffee grown within a single known geographic origin. Sometimes, this is a single farm or a specific collection of beans from a single country. The name of the coffee is then usually the place it was grown to whatever degree available.
+## _匡架使命_
 
-### Sustainable farming
-
-Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities.
-
-### Direct sourcing
-
-Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality.
-
-### Reinvest profits
-
-We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog.
+* 通过我们不断努力、创新、知识和经验的积累，为企业提供先进高效的网络营销解决方案系统，为顾客创造价值，让我们的服务帮助每一个客户成功，发展成为受人尊敬的知名网络公司。
