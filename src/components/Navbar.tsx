@@ -21,10 +21,10 @@ const Navbar: React.SFC = () => (
                 <Link className="navbar-item" to="/about">
                     关于我们
                 </Link>
-                <Link className="navbar-item" to="/design">
+                <Link className="navbar-item" to="/tags/设计">
                     产品设计
                 </Link>
-                <Link className="navbar-item" to="/app">
+                <Link className="navbar-item" to="/tags/应用">
                     应用展示
                 </Link>
                 <Link className="navbar-item" to="/contact">
