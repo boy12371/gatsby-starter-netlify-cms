@@ -21,17 +21,17 @@ const Navbar: React.SFC = () => (
                 <Link className="navbar-item" to="/about">
                     关于我们
                 </Link>
-                <Link className="navbar-item" to="/products">
-                    产品展示
+                <Link className="navbar-item" to="/design">
+                    产品设计
+                </Link>
+                <Link className="navbar-item" to="/app">
+                    应用展示
                 </Link>
                 <Link className="navbar-item" to="/contact">
                     联系我们
                 </Link>
                 <Link className="navbar-item" to="/search">
                     搜索列表
-                </Link>
-                <Link className="navbar-item" to="/contact/examples">
-                    案例展示
                 </Link>
             </div>
         </div>

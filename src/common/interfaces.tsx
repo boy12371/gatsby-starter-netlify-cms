@@ -75,15 +75,6 @@ export interface AboutPageProps {
     data: any;
 }
 
-export interface BlogPostTemplateProps {
-    content: React.ReactNode;
-    contentComponent?: React.ComponentType<BaseContentProps<any>>;
-    description: React.ReactText;
-    tags?: string[];
-    title: string;
-    helmet?: React.ReactNode;
-}
-
 export interface Frontmatter {
     description: string;
     title: string;
@@ -94,14 +85,6 @@ export interface Frontmatter {
 export interface MarkdownRemark<F extends object = Frontmatter> {
     html: string;
     frontmatter: F;
-}
-
-export interface BlogPostData<F extends object = Frontmatter> {
-    markdownRemark: MarkdownRemark<F>;
-}
-
-export interface BlogPostProps {
-    data: BlogPostData;
 }
 
 export interface Edge<F extends Frontmatter = Frontmatter> {
@@ -128,69 +111,6 @@ export interface TagRouteProps<F extends Frontmatter = Frontmatter> {
     pageContext: {
         tag: string;
     };
-}
-
-// ====================== ProductPage ======================
-
-export interface ProductPostTemplateProps {
-    content: React.ReactNode;
-    contentComponent?: React.ComponentType<BaseContentProps<any>>;
-    description: React.ReactText;
-    tags?: string[];
-    title: string;
-    helmet?: React.ReactNode;
-}
-
-export interface ProductPostData<F extends object = Frontmatter> {
-    markdownRemark: MarkdownRemark<F>;
-}
-
-export interface ProductPostProps {
-    data: ProductPostData;
-}
-
-export interface ProductPageIntro {
-    blurbs: ImageInfoWithText[];
-}
-
-export interface ProductPageMain {
-    heading?: string;
-    description?: string;
-    image1: Image;
-    image2: Image;
-    image3: Image;
-}
-
-export interface ProductPagePricing {
-    heading?: string;
-    description?: string;
-    plans: Price[];
-}
-
-export interface ProductPageTemplateProps {
-    image: Image;
-    title?: string;
-    heading?: string;
-    description?: string;
-    intro: ProductPageIntro;
-    main: ProductPageMain;
-    testimonials: Testimonial[];
-    fullImage: Image;
-    pricing: ProductPagePricing;
-}
-
-export interface ProductPageFrontmatter extends Frontmatter {
-    image: Image;
-    heading: string;
-    intro: ProductPageIntro;
-    main: ProductPageMain;
-    testimonials: Testimonial[];
-    full_image: Image;
-    pricing: ProductPagePricing;
-}
-
-export interface ProductPageProps {
-    data: ProductPostData<ProductPageFrontmatter>;
 }
 
 // ====================== SearchPage ======================
@@ -272,4 +192,86 @@ export interface IndexPageTemplateProps {
 
 export interface IndexPageProps {
     data: any;
+}
+
+// ====================== AppPost ======================
+
+export interface AppPostTemplateProps {
+    content: React.ReactNode;
+    contentComponent?: React.ComponentType<BaseContentProps<any>>;
+    description: React.ReactText;
+    tags?: string[];
+    title: string;
+    helmet?: React.ReactNode;
+}
+
+export interface AppPostData<F extends object = Frontmatter> {
+    markdownRemark: MarkdownRemark<F>;
+}
+
+export interface AppPostProps {
+    data: AppPostData;
+}
+
+// ====================== DesignPage ======================
+
+export interface DesignPostTemplateProps {
+    content: React.ReactNode;
+    contentComponent?: React.ComponentType<BaseContentProps<any>>;
+    description: React.ReactText;
+    tags?: string[];
+    title: string;
+    helmet?: React.ReactNode;
+}
+
+export interface DesignPostData<F extends object = Frontmatter> {
+    markdownRemark: MarkdownRemark<F>;
+}
+
+export interface DesignPostProps {
+    data: DesignPostData;
+}
+
+export interface DesignPageIntro {
+    blurbs: ImageInfoWithText[];
+}
+
+export interface DesignPageMain {
+    heading?: string;
+    description?: string;
+    image1: Image;
+    image2: Image;
+    image3: Image;
+}
+
+export interface DesignPagePricing {
+    heading?: string;
+    description?: string;
+    plans: Price[];
+}
+
+export interface DesignPageTemplateProps {
+    image: Image;
+    title?: string;
+    heading?: string;
+    description?: string;
+    intro: DesignPageIntro;
+    main: DesignPageMain;
+    testimonials: Testimonial[];
+    fullImage: Image;
+    pricing: DesignPagePricing;
+}
+
+export interface DesignPageFrontmatter extends Frontmatter {
+    image: Image;
+    heading: string;
+    intro: DesignPageIntro;
+    main: DesignPageMain;
+    testimonials: Testimonial[];
+    full_image: Image;
+    pricing: DesignPagePricing;
+}
+
+export interface DesignPageProps {
+    data: DesignPostData<DesignPageFrontmatter>;
 }

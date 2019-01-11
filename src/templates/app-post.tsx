@@ -5,9 +5,9 @@ import { graphql, Link } from "gatsby";
 
 import Layout from "../components/Layout";
 import { Content, HTMLContent } from "../components/Content";
-import { BlogPostTemplateProps, BlogPostProps } from "../common/interfaces";
+import { AppPostTemplateProps, AppPostProps } from "../common/interfaces";
 
-export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
+export const AppPostTemplate: React.SFC<AppPostTemplateProps> = ({
     content,
     contentComponent,
     description,
@@ -51,17 +51,17 @@ export const BlogPostTemplate: React.SFC<BlogPostTemplateProps> = ({
     );
 };
 
-const BlogPost: React.SFC<BlogPostProps> = ({ data }) => {
+const AppPost: React.SFC<AppPostProps> = ({ data }) => {
     const { markdownRemark: post } = data;
 
     return (
         <Layout>
-            <BlogPostTemplate
+            <AppPostTemplate
                 content={post.html}
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description}
                 helmet={
-                    <Helmet titleTemplate="%s | Blog">
+                    <Helmet titleTemplate="%s | App">
                         <title>{`${post.frontmatter.title}`}</title>
                         <meta
                             name="description"
@@ -76,10 +76,10 @@ const BlogPost: React.SFC<BlogPostProps> = ({ data }) => {
     );
 };
 
-export default BlogPost;
+export default AppPost;
 
 export const pageQuery = graphql`
-    query BlogPostByID($id: String!) {
+    query AppPostByID($id: String!) {
         markdownRemark(id: { eq: $id }) {
             id
             html
