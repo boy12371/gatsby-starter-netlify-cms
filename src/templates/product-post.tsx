@@ -64,7 +64,7 @@ const ProductPost: React.SFC<ProductPostProps> = ({ data }) => {
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description}
                 helmet={
-                    <Helmet titleTemplate="%s | Product">
+                    <Helmet titleTemplate="%s | 产品">
                         <title>{`${post.frontmatter.title}`}</title>
                         <meta
                             name="description"

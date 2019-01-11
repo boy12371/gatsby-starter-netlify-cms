@@ -4,6 +4,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { Content, HTMLContent } from "../components/Content";
 import { AboutPageTemplateProps, AboutPageProps } from "../common/interfaces";
+import { Helmet } from "react-helmet";
 
 export const AboutPageTemplate: React.SFC<AboutPageTemplateProps> = ({
     title,
@@ -14,6 +15,9 @@ export const AboutPageTemplate: React.SFC<AboutPageTemplateProps> = ({
 
     return (
         <section className="section section--gradient">
+            <Helmet titleTemplate="%s | 上海匡架网络">
+                <title>关于我们</title>
+            </Helmet>
             <div className="container">
                 <div className="columns">
                     <div className="column is-10 is-offset-1">
