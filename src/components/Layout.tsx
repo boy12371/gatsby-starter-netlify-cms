@@ -6,7 +6,7 @@ import "./all.sass";
 
 const TemplateWrapper: React.SFC = ({ children }) => (
     <div>
-        <Helmet title="Home | Gatsby + Netlify CMS" />
+        <Helmet title="首页 | 上海匡架网络" />
         <Navbar />
         <div>{children}</div>
     </div>
