@@ -6,18 +6,18 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "product"
-    label: "发布"
-    folder: "src/pages/product"
+  - name: "article"
+    label: "文章"
+    folder: "src/pages/article"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Tags", name: "tags", widget: "list"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article-post"}
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布时间", name: "date", widget: "datetime"}
+      - {label: "描述", name: "description", widget: "text"}
+      - {label: "主体", name: "body", widget: "markdown"}
+      - {label: "标签", name: "tags", widget: "list"}
 
   - name: "pages"
     label: "单页"
@@ -27,5 +27,22 @@ collections:
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "主体", name: "body", widget: "markdown"}
+
+  - name: "settings"
+    label: "设置"
+    files:
+      - file: "src/pages/settings/navigation.md"
+        label: "导航"
+        name: "navigation"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "navigation-settings"}
+          - {label: "导航", name: "navigation", widget: "list", fields: [{label: "标题", name: "title", widget: "string"}, {label: "路径", name: "path", widget: "string"}]}
+      - file: "src/pages/settings/units.md"
+        label: "单位"
+        name: "units"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "units-settings"}
+          - {label: "货币", name: "currency", widget: "string"}
+          - {label: "重量", name: "weight", widget: "string"}

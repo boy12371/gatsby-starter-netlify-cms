@@ -6,11 +6,11 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/Layout";
 import { Content, HTMLContent } from "../components/Content";
 import {
-    ProductPostTemplateProps,
-    ProductPostProps
+    ArticlePostTemplateProps,
+    ArticlePostProps
 } from "../common/interfaces";
 
-export const ProductPostTemplate: React.SFC<ProductPostTemplateProps> = ({
+export const ArticlePostTemplate: React.SFC<ArticlePostTemplateProps> = ({
     content,
     contentComponent,
     description,
@@ -54,12 +54,12 @@ export const ProductPostTemplate: React.SFC<ProductPostTemplateProps> = ({
     );
 };
 
-const ProductPost: React.SFC<ProductPostProps> = ({ data }) => {
+const ArticlePost: React.SFC<ArticlePostProps> = ({ data }) => {
     const { markdownRemark: post } = data;
 
     return (
         <Layout>
-            <ProductPostTemplate
+            <ArticlePostTemplate
                 content={post.html}
                 contentComponent={HTMLContent}
                 description={post.frontmatter.description}
@@ -79,10 +79,10 @@ const ProductPost: React.SFC<ProductPostProps> = ({ data }) => {
     );
 };
 
-export default ProductPost;
+export default ArticlePost;
 
 export const pageQuery = graphql`
-    query ProductPostByID($id: String!) {
+    query ArticlePostByID($id: String!) {
         markdownRemark(id: { eq: $id }) {
             id
             html

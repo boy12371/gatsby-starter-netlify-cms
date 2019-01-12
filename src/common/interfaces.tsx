@@ -196,7 +196,7 @@ export interface IndexPageProps {
 
 // ====================== ProductPost ======================
 
-export interface ProductPostTemplateProps {
+export interface ArticlePostTemplateProps {
     content: React.ReactNode;
     contentComponent?: React.ComponentType<BaseContentProps<any>>;
     description: React.ReactText;
@@ -205,10 +205,56 @@ export interface ProductPostTemplateProps {
     helmet?: React.ReactNode;
 }
 
-export interface ProductPostData<F extends object = Frontmatter> {
+export interface ArticlePostData<F extends object = Frontmatter> {
     markdownRemark: MarkdownRemark<F>;
 }
 
-export interface ProductPostProps {
-    data: ProductPostData;
+export interface ArticlePostProps {
+    data: ArticlePostData;
+}
+
+// ====================== ProductPage ======================
+
+export interface ProductPageIntro {
+    blurbs: ImageInfoWithText[];
+}
+
+export interface ProductPageMain {
+    heading?: string;
+    description?: string;
+    image1: Image;
+    image2: Image;
+    image3: Image;
+}
+
+export interface ProductPagePricing {
+    heading?: string;
+    description?: string;
+    plans: Price[];
+}
+
+export interface ProductPageTemplateProps {
+    image: Image;
+    title?: string;
+    heading?: string;
+    description?: string;
+    intro: ProductPageIntro;
+    main: ProductPageMain;
+    testimonials: Testimonial[];
+    fullImage: Image;
+    pricing: ProductPagePricing;
+}
+
+export interface ProductPageFrontmatter extends Frontmatter {
+    image: Image;
+    heading: string;
+    intro: ProductPageIntro;
+    main: ProductPageMain;
+    testimonials: Testimonial[];
+    full_image: Image;
+    pricing: ProductPagePricing;
+}
+
+export interface ProductPageProps {
+    data: ArticlePostData<ProductPageFrontmatter>;
 }

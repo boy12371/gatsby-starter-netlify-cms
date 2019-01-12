@@ -1,10 +1,10 @@
 import React from "react";
 
-import { ProductPostTemplate } from "../../templates/product-post";
+import { ArticlePostTemplate } from "../../templates/article-post";
 import { PreviewProps } from "../../common/interfaces";
 
-const ProductPostPreview: React.SFC<PreviewProps> = ({ entry, widgetFor }) => (
-    <ProductPostTemplate
+const ArticlePostPreview: React.SFC<PreviewProps> = ({ entry, widgetFor }) => (
+    <ArticlePostTemplate
         content={widgetFor("body")}
         description={entry.getIn(["data", "description"])}
         tags={entry.getIn(["data", "tags"])}
@@ -12,4 +12,4 @@ const ProductPostPreview: React.SFC<PreviewProps> = ({ entry, widgetFor }) => (
     />
 );
 
-export default ProductPostPreview;
+export default ArticlePostPreview;
