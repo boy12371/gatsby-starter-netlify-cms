@@ -1,0 +1,11 @@
+{
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "eslint.enable": false,
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        ".prettierrc": "yaml"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": false
+}

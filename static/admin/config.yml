@@ -1,48 +1,89 @@
 backend:
-  name: git-gateway
-  branch: master
+    name: github
+    branch: master
+    repo: boy12371/gatsby-starter-netlify-cms
+    base_url: https://api.netlify.com
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "article"
-    label: "文章"
-    folder: "src/pages/article"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "article-post"}
-      - {label: "标题", name: "title", widget: "string"}
-      - {label: "发布时间", name: "date", widget: "datetime"}
-      - {label: "描述", name: "description", widget: "text"}
-      - {label: "主体", name: "body", widget: "markdown"}
-      - {label: "标签", name: "tags", widget: "list"}
+    - name: article
+      label: 文章
+      folder: src/pages/article
+      create: true
+      slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+      fields:
+          - label: Template Key
+            name: templateKey
+            widget: hidden
+            default: article-post
+          - label: 标题
+            name: title
+            widget: string
+          - label: 发布时间
+            name: date
+            widget: datetime
+          - label: 描述
+            name: description
+            widget: text
+          - label: 主体
+            name: body
+            widget: markdown
+          - label: 标签
+            name: tags
+            widget: list
 
-  - name: "pages"
-    label: "单页"
-    files:
-      - file: "src/pages/about/index.md"
-        label: "关于我们"
-        name: "about"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "标题", name: "title", widget: "string"}
-          - {label: "主体", name: "body", widget: "markdown"}
+    - name: pages
+      label: 单页
+      files:
+          - file: src/pages/about/index.md
+            label: 关于我们
+            name: about
+            fields:
+                - label: Template Key
+                  name: templateKey
+                  widget: hidden
+                  default: about-page
+                - label: 标题
+                  name: title
+                  widget: string
+                - label: 主体
+                  name: body
+                  widget: markdown
 
-  - name: "settings"
-    label: "设置"
-    files:
-      - file: "src/pages/settings/navigation.md"
-        label: "导航"
-        name: "navigation"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "navigation-settings"}
-          - {label: "导航", name: "navigation", widget: "list", fields: [{label: "标题", name: "title", widget: "string"}, {label: "路径", name: "path", widget: "string"}]}
-      - file: "src/pages/settings/units.md"
-        label: "单位"
-        name: "units"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "units-settings"}
-          - {label: "货币", name: "currency", widget: "string"}
-          - {label: "重量", name: "weight", widget: "string"}
+    - name: settings
+      label: 设置
+      files:
+          - file: src/pages/settings/navigation.md
+            label: 导航
+            name: navigation
+            fields:
+                - label: Template Key
+                  name: templateKey
+                  widget: hidden
+                  default: navigation-settings
+                - label: 导航
+                  name: navigation
+                  widget: list
+                  fields:
+                      - label: 标题
+                        name: title
+                        widget: string
+                      - label: 路径
+                        name: path
+                        widget: string
+          - file: src/pages/settings/units.md
+            label: 单位
+            name: units
+            fields:
+                - label: Template Key
+                  name: templateKey
+                  widget: hidden
+                  default: units-settings
+                - label: 货币
+                  name: currency
+                  widget: string
+                - label: 重量
+                  name: weight
+                  widget: string

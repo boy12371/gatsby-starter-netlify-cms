@@ -27,7 +27,7 @@ overrides:
     - files: "*.tsx"
       options:
           parser: typescript
-    - files: ".*.yml"
+    - files: "*.yml"
       options:
           parser: yaml
     - files: ".prettierrc"
